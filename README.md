@@ -7,9 +7,9 @@ Reads a dataset in KIVA4 format (kiva4grid)
 # Overview
 
 vtkKiva4Reader creates an unstructured grid dataset. It reads ASCII files stored in KIVA4 format (i.e., kiva4grid), with boundary data at cells of the model. The OutputFace option controls the mesh types for outputting:
-  =0: only volumes
-  =1: volumes and faces except for interior faces
-  =2: volumes and all faces
++ =0: only volumes
++ =1: volumes and faces except for interior faces
++ =2: volumes and all faces
 
 # Compiling from scratch requires CMake.
 

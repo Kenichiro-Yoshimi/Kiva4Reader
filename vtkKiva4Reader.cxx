@@ -114,7 +114,7 @@ int vtkKiva4Reader::RequestInformation(
   *(this->FileStream) >> this->NumberOfNodes;
 
   this->NumberOfAllCells = this->NumberOfCells + 
-    this->OutputFace * this->NumberOfCells * 6;
+    (int)(this->OutputFace >= 1) * this->NumberOfCells * 6;
 
   return 1;
 }
@@ -186,8 +186,6 @@ void vtkKiva4Reader::ReadGeometry(vtkUnstructuredGrid *output)
 
   output->SetPoints(points);
   points->Delete();
-
-  
 }
 
 //----------------------------------------------------------------------------
@@ -209,7 +207,7 @@ void vtkKiva4Reader::ReadCellTopology(vtkUnstructuredGrid *output)
   output->Allocate();
   for (int i = 0; i < this->NumberOfCells; ++i)
   {
-    for(int k = 0; k < 8; ++k)
+    for (int k = 0; k < 8; ++k)
     {
       *(this->FileStream) >> list[k];
       --list[k];

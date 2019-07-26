@@ -133,7 +133,7 @@ void vtkKiva4Reader::ReadFile(vtkUnstructuredGrid *output)
   if (this->OutputFace == 1)
   {
     vtkIntArray *materials = vtkIntArray::SafeDownCast(
-      output->GetCellData()->GetArray("Matrial_Id"));
+      output->GetCellData()->GetArray("Material_Id"));
 
     vtkIdTypeArray *ids = vtkIdTypeArray::New();
     ids->SetNumberOfComponents(1);

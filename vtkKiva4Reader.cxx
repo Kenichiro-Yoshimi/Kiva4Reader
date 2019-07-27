@@ -264,7 +264,7 @@ void vtkKiva4Reader::ReadMaterials(vtkUnstructuredGrid *output)
   // add a material array
   vtkIntArray *materials = vtkIntArray::New();
   materials->SetNumberOfTuples(this->NumberOfAllCells);
-  materials->SetName("Matrial_Id");
+  materials->SetName("Material_Id");
 
   int *mat = materials->GetPointer(0);
   int matId[7];
